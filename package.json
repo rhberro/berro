@@ -1,0 +1,57 @@
+{
+  "name": "berro",
+  "version": "1.0.0",
+  "description": "My personal boilerplate.",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "boilerplate"
+  ],
+  "author": {
+    "name": "Rafael Henrique Berro",
+    "email": "rhberro@gmail.com"
+  },
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.9.0",
+    "yarn": "1.16.0"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.0",
+    "lint-staged": ">=8",
+    "prettier": "1.18.2",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
