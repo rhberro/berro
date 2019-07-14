@@ -4,8 +4,7 @@ import React from 'react'
 function Button(
   {
     children,
-    onClick
-  }
+    onClick}
 ) {
   return <button onClick={onClick}>{children}</button>
 }
