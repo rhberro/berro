@@ -49,7 +49,7 @@
     }
   },
   "lint-staged": {
-    "source/**/**.{js,jsx}": [
+    "*.{js,jsx}": [
       "prettier --check"
     ]
   }
