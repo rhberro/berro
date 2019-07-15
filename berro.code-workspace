@@ -1,8 +1,8 @@
 {
   "folders": [
     {
-      "path": ".",
-    },
+      "path": "."
+    }
   ],
   "settings": {},
   "extensions": {
@@ -10,7 +10,7 @@
       "esbenp.prettier-vscode",
       "monokai.theme-monokai-pro-vscode",
       "ms-azuretools.vscode-docker",
-      "msjsdiag.debugger-for-chrome",
-    ],
-  },
+      "msjsdiag.debugger-for-chrome"
+    ]
+  }
 }

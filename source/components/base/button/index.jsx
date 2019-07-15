@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-function Button({ children, onClick }) {
-  return <button onClick={onClick}>{children}</button>
+function Button(props) {
+  return <button onClick={props.onClick}>{props.children}</button>
 }
 
 Button.propTypes = {

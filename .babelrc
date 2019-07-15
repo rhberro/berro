@@ -1,11 +1,11 @@
 {
   "presets": [
-    [ "@babel/env",
+    [
+      "@babel/env",
       {
-        "useBuiltIns": "usage",
-      },
+        "useBuiltIns": "usage"
+      }
     ],
-    [ "@babel/preset-react"
-    ]
+    ["@babel/preset-react"]
   ]
 }
