@@ -6,7 +6,7 @@ const path = require("path");
 module.exports = {
   entry: path.resolve(__dirname, "source", "index.js"),
   output: {
-    filename: "index.js",
+    filename: "main.js",
     path: path.resolve(__dirname, "build")
   },
   plugins: [
@@ -31,6 +31,7 @@ module.exports = {
   },
   devtool: "eval-source-map",
   devServer: {
+    port: 3000,
     hot: true
   },
   mode: "development"
