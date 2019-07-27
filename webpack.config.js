@@ -1,24 +1,22 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { HotModuleReplacementPlugin } = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { HotModuleReplacementPlugin } = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
-  entry: path.resolve(__dirname, 'source', 'index.js'),
+  entry: path.resolve(__dirname, "source", "index.js"),
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "index.js",
+    path: path.resolve(__dirname, "build")
   },
   plugins: [
     new HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(
-      {
-        title: 'berro',
-        template: path.resolve(__dirname, 'source', 'index.html'),
-        favicon: path.resolve(__dirname, 'source', 'favicon.ico'),
-      }
-    ),
+    new HtmlWebpackPlugin({
+      title: "berro",
+      template: path.resolve(__dirname, "source", "index.html"),
+      favicon: path.resolve(__dirname, "source", "favicon.ico")
+    })
   ],
   module: {
     rules: [
@@ -26,14 +24,14 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        },
-      },
-    ],
+          loader: "babel-loader"
+        }
+      }
+    ]
   },
-  devtool: 'eval-source-map',
+  devtool: "eval-source-map",
   devServer: {
-    hot: true,
+    hot: true
   },
-  mode: 'development',
+  mode: "development"
 };
