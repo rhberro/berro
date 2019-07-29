@@ -7,6 +7,6 @@
 [context.production]
   command = "yarn build"
   [context.production.environment]
-    SERVICE_USERS_PORT=80
-    SERVICE_USERS_URL="https://berro-users.netlify.com"
+    SERVICE_USERS_PORT = 80
+    SERVICE_USERS_URL = "https://berro-users.netlify.com"
     YARN_VERSION = "1.17.3"
