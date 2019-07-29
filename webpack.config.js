@@ -1,16 +1,15 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const { HotModuleReplacementPlugin } = require("webpack");
+const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
   entry: path.resolve(__dirname, "source", "index.js"),
   output: {
-    filename: "main.js",
     path: path.resolve(__dirname, "build")
   },
   plugins: [
-    new HotModuleReplacementPlugin(),
+    new Dotenv(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "berro",
@@ -31,8 +30,15 @@ module.exports = {
   },
   devtool: "eval-source-map",
   devServer: {
+    historyApiFallback: true,
     port: 3000,
-    hot: true
+    hot: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers":
+        "X-Requested-With, content-type, Authorization"
+    }
   },
   mode: "development"
 };
