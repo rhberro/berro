@@ -11,8 +11,6 @@ const ServiceProvider = props => {
 
   const container = useRef()
 
-  const [error, setError] = useState()
-
   const handleLoad = event => {
     const {
       detail,
@@ -25,7 +23,6 @@ const ServiceProvider = props => {
   }
 
   const handleError = event => {
-    setError(true)
     document.body.removeChild(event.target)
   }
 
@@ -70,7 +67,6 @@ const ServiceProvider = props => {
 
   const value = {
     container,
-    error,
     mount,
     unmount,
   }
