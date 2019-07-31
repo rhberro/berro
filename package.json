@@ -17,8 +17,8 @@
     "yarn": "1.17.3"
   },
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server --open"
+    "build": "webpack --config webpack.production.js",
+    "start": "webpack-dev-server --config webpack.development.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
@@ -35,7 +35,8 @@
     "prettier": "1.18.2",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "core-js": "3",

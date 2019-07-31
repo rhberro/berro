@@ -6,3 +6,4 @@ build
 
 # miscellaneous.
 .vscode
+.env
