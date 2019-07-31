@@ -2,16 +2,16 @@
 [build]
   publish = "build"
 
-# Production context: All deploys from the main
-# repository branch will inherit these settings.
-[context.production]
-  command = "yarn build"
-
-[context.production.environment]
+[build.environment]
   SERVICE_CASES_URL = "https://berro-cases.netlify.com"
   SERVICE_TASKS_URL = "https://berro-tasks.netlify.com"
   SERVICE_USERS_URL = "https://berro-users.netlify.com"
   YARN_VERSION = "1.17.3"
+
+# Production context: All deploys from the main
+# repository branch will inherit these settings.
+[context.production]
+  command = "yarn build"
 
 # A redirect rule with all the supported properties
 [[redirects]]
