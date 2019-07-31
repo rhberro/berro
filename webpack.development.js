@@ -1,6 +1,8 @@
 const merge = require("webpack-merge");
 const path = require("path");
 
+const DotenvWebpackPlugin = require("dotenv-webpack");
+
 const base = require("./webpack.config.js");
 
 const extension = {
@@ -17,6 +19,9 @@ const extension = {
         "X-Requested-With, content-type, Authorization",
     },
   },
+  plugins: [
+    new DotenvWebpackPlugin(),
+  ]
 };
 
 module.exports = merge(base, extension);
