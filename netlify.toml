@@ -6,10 +6,18 @@
 # repository branch will inherit these settings.
 [context.production]
   command = "yarn build"
-  environment = { SERVICE_CASES_URL = "https://berro-cases.netlify.com", SERVICE_TASKS_URL = "https://berro-tasks.netlify.com", SERVICE_USERS_URL = "https://berro-users.netlify.com", YARN_VERSION = "1.17.3" }
 
-  [context.production.environment]
-    SERVICE_CASES_URL = "https://berro-cases.netlify.com"
-    SERVICE_TASKS_URL = "https://berro-tasks.netlify.com"
-    SERVICE_USERS_URL = "https://berro-users.netlify.com"
-    YARN_VERSION = "1.17.3"
+[context.production.environment]
+  SERVICE_CASES_URL = "https://berro-cases.netlify.com"
+  SERVICE_TASKS_URL = "https://berro-tasks.netlify.com"
+  SERVICE_USERS_URL = "https://berro-users.netlify.com"
+  YARN_VERSION = "1.17.3"
+
+# A redirect rule with all the supported properties
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+
+  # The default HTTP status code is 301, but you can define a different one.
+  status = 200
+
