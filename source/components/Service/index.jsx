@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 
 import { ServiceContext } from '../ServiceContainer/index.jsx'
 
 const Service = props => {
   const { address, name } = props
 
-  const { container, error, mount, unmount } = useContext(ServiceContext)
+  const { mount, register, services, unmount } = useContext(ServiceContext)
+
+  const container = useRef()
 
   const lifecycle = () => {
-    mount(name, address)
+    register(name, address, container)
+
+    mount(name)
 
     return () => {
       unmount(name)

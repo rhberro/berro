@@ -3,12 +3,11 @@ import 'regenerator-runtime/runtime'
 
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 import React, { StrictMode, Suspense } from 'react'
-import ReactDOM from 'react-dom'
+import { SERVICE_CASES_HOST, SERVICE_TASKS_HOST, SERVICE_USERS_HOST } from './constants/environment'
 
+import ReactDOM from 'react-dom'
 import Service from './components/Service/index.jsx'
 import ServiceContainer from './components/ServiceContainer/index.jsx'
-
-import { SERVICE_USERS_HOST, SERVICE_TASKS_HOST, SERVICE_CASES_HOST } from './constants/environment'
 
 const UsersService = () => <Service address={SERVICE_USERS_HOST} name="users" />
 const TasksService = () => <Service address={SERVICE_TASKS_HOST} name="tasks" />
